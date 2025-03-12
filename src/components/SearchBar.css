@@ -1,0 +1,64 @@
+.input-wrapper{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 15px;
+    box-shadow:0px 0px 8px #add ;
+    display: flex;
+    align-items: center;
+
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 5px;
+
+}
+
+button {
+    transition: background-color 0.5s ease, transform 0.2s ease; /* Smooth transition for background color and transform */
+}
+
+
+button.active {
+    background-color: #0056b3; /* Darker shade when active */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+    transform: scale(1.10); /* Slightly enlarge the button */
+}
+
+input:focus{
+    outline: none;
+}
+
+#search-icon{
+    color: royalblue;
+}
+
+/* Add these styles to your SearchBar.css for the spinner */
+
+.loading-spinner {
+    border: 4px solid #f3f3f3; /* Light gray border */
+    border-top: 4px solid #3498db; /* Blue border on top to show rotation */
+    border-radius: 50%; /* Make it circular */
+    width: 20px; /* Set the width */
+    height: 20px; /* Set the height */
+    animation: spin 1s linear infinite; /* Animate the rotation */
+    display: inline-block; /* Ensure it aligns properly */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }  /* Initial position */
+    100% { transform: rotate(360deg); }  /* Full rotation */
+  }
+
+  /* Error message */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

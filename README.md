@@ -26,8 +26,34 @@ This repository contains the frontend code for the **AskMe Chatbot**, deployed a
 4. **Deployment to Azure**: The Docker image is deployed as an **Azure Container App**.
 
 ## How to Run Locally
+
+1. Create conda environment
+```
+conda create env_name python==3.11
+conda activate env_name
+```
+
+2. Clone the repo
 ```sh
 git clone https://github.com/your-org/askme-frontend.git
 cd askme-frontend
+````
+
+3. Install npm
+```
 npm install
+````
+
+4. Start the app
+```
 npm start
+```
+
+(or)
+
+### To run the application using Docker
+
+```
+docker-compose up
+```
+

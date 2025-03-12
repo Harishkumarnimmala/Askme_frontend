@@ -1,0 +1,43 @@
+infra
+node_modules
+*.sh
+
+# Ignore node_modules and dependency files
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore build outputs (if you're building inside the container)
+build
+dist
+
+# Ignore logs
+*.log
+logs
+*.log.*
+
+# Ignore cache directories
+.cache
+.vscode
+
+# Ignore Docker and deployment files (if not needed inside the container)
+Dockerfile
+docker-compose.yml
+deploy.sh
+
+# Ignore Git files
+.git
+.gitignore
+
+# Ignore miscellaneous files
+.DS_Store
+*.md
+README.md

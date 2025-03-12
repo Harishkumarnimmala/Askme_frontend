@@ -1,0 +1,52 @@
+*.pyc
+__pycache__/
+infra
+package-lock.json
+
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Build output
+build/
+dist/
+
+# Local environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+*.log
+logs/
+log.txt
+
+# Editor directories and files
+.vscode/
+.idea/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Test coverage directory
+coverage/
+
+# Temporary files
+*.tmp
+*.swp
+*.sublime-workspace
+
+# React Native related
+*.expo/
+.expo-shared/
+
+# Optional cache files
+.cache/
