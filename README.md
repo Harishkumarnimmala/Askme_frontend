@@ -46,14 +46,19 @@ npm install
 
 4. Start the app
 ```
-npm start
+npm start   
 ```
 
 (or)
 
 ### To run the application using Docker
 
-```
-docker-compose up
-```
+# To run docker image 
+
+docker compose down
+docker compose build --no-cache
+docker compose up -d
+
+
+
 
