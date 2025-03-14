@@ -15,8 +15,8 @@ export const SearchBar  = ({setResults}) =>{
         setLoading(true); // Start loading
         setError(null);  // Clear previous error messag
         
-        //const baseUrl = window.backend_url;
-        const baseUrl  = window.backend_url || "http://localhost:8000";
+        const baseUrl = window.backend_url;
+        //const baseUrl  = window.backend_url || "http://localhost:8000";
         console.log("Using backend URL:", baseUrl);
 
          // Ensure base URL and endpoint are defined
