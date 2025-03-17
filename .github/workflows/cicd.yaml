@@ -5,9 +5,18 @@ on:
     branches:
       - master  # Trigger on push to the main branch
 
+  
+  workflow_dispatch:
+    inputs:
+      custom_message:
+        description: 'Custom message for manual run'
+        required: false
+        default: 'Triggered Manually'
+
 permissions: 
   id-token: write  # Required for OIDC authentications
   contents: read
+
 
 jobs:
   build-and-push:
