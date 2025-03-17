@@ -5,6 +5,10 @@ on:
     branches:
       - master  # Trigger on push to the main branch
 
+permissions: 
+  id-token: write  # Required for OIDC authentication
+  contents: read
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
