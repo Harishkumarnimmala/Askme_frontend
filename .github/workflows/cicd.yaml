@@ -14,7 +14,7 @@ on:
         default: 'Triggered Manually'
 
 permissions: 
-  id-token: write  # Required for OIDC authentications
+  id-token: write  # Required for OIDC authentication
   contents: read
 
 
