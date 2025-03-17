@@ -3,7 +3,7 @@ name: Deploy Frontend to Azure Container Apps
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch
+      - master  # Trigger on push to the main branch
 
 jobs:
   build-and-push:
