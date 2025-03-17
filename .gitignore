@@ -1,7 +1,6 @@
 *.pyc
 __pycache__/
 infra
-package-lock.json
 
 
 # Node.js dependencies
