@@ -98,12 +98,31 @@ echo "$(minikube ip) frontend.local" | sudo tee -a /etc/hosts
 
 # If not working go stop and start minikube using below commands 
 
-minikube stop
+minikube stop  # After everytime we need to build and load image when we stop minikube since we did it manually
 minikube start
+
+# first set docker to Use Minikube's Internal Environment
+eval $(minikube docker-env)
+
+# Rebuild the Docker image
+docker build -t frontend:latest .
+
+# Reload the image into Minikube
+minikube image load frontend:latest
+
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 kubectl apply -f configmap.yaml
 kubectl apply -f ingress.yaml
+
+# Now lets Monitor Logs and Running Pods using below commands 
+
+kubectl get pods
+
+ --> to view log of specific pod 
+
+    kubectl logs -l app=frontend
+
 
 
 
