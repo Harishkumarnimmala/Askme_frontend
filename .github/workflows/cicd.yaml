@@ -6,7 +6,7 @@ on:
       - master  # Trigger on push to the main branch
 
 permissions: 
-  id-token: write  # Required for OIDC authentication
+  id-token: write  # Required for OIDC authentications
   contents: read
 
 jobs:
