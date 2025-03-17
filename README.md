@@ -125,6 +125,8 @@ kubectl get pods
 
 
 
+# To get ACR username and password 
+az acr credential show --name askmeaiactr --query "passwords[0].value" -o tsv
 
 
 
