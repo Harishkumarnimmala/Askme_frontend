@@ -3,9 +3,8 @@ name: Deploy Frontend to Azure Container Apps
 on:
   push:
     branches:
-      - master  # Trigger on push to the main branch
+      - master  # Trigger on push to the master branch
 
-  
   workflow_dispatch:
     inputs:
       custom_message:
@@ -14,9 +13,8 @@ on:
         default: 'Triggered Manually'
 
 permissions: 
-  id-token: write  # Required for OIDC authentication permision
+  id-token: write  # Required for OIDC authentication permission
   contents: read
-
 
 jobs:
   build-and-push:
@@ -25,7 +23,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Manually Login to Azure Container Registry (ACR)
+      - name: Login to Azure Container Registry (ACR)
         run: |
           echo "${{ secrets.ACR_PASSWORD }}" | docker login ${{ secrets.ACR_LOGIN_SERVER }} -u ${{ secrets.ACR_USERNAME }} --password-stdin
 
@@ -41,7 +39,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Azure Login
+      - name: Azure Login (OIDC)
         uses: azure/login@v1
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -57,7 +55,4 @@ jobs:
             --min-replicas 1 \
             --max-replicas 3 \
             --cpu 0.5 \
-            --memory 1Gi \
-            --registry-server ${{ secrets.ACR_LOGIN_SERVER }} \
-            --registry-username ${{ secrets.ACR_USERNAME }} \
-            --registry-password ${{ secrets.ACR_PASSWORD }}
+            --memory 1Gi
